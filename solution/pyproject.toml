@@ -1,0 +1,26 @@
+[project]
+name = "unbabel_cli"
+version = "0.1.0"
+description = "Simple CLI for Unbabel's Backend Engineering Challenge."
+requires-python = "==3.8.*"
+dependencies = [
+    "click==8.1.*",
+    "pydantic==1.10.*"
+]
+
+[project.optional-dependencies]
+test = ["pytest==7.4.*"]
+
+[project.scripts]
+unbabel_cli = "unbabel_cli.cli:cli"
+
+[build-system]
+requires = ["setuptools==69.0.*"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = [
+    "--import-mode=importlib",
+]
+testpaths = "tests"
